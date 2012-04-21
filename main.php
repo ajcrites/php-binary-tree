@@ -8,10 +8,10 @@
    Postorder: A C E D B H I G F
  * @author Andrew Crites <explosion-pills@aysites.com>
  */
-require 'Tree.php';
-require 'Node.php';
-require 'Branch.php';
-require 'Leaf.php';
+require 'src/Tree.php';
+require 'src/node/Node.php';
+require 'src/node/Branch.php';
+require 'src/node/Leaf.php';
 
 $values = array_slice($argv, 1);
 
