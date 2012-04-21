@@ -1,15 +1,14 @@
 <?php
 class Tree {
-   private $root = null;
+   private $root;
    private $counter = 1;
 
+   public function __construct() {
+      $this->root = new Leaf;
+   }
+
    public function add($value) {
-      if ($this->root == null) {
-         $this->root = new Node($value);
-      }
-      else {
-         $this->root->insert(new Node($value));
-      }
+      $this->root = $this->root->insert($value);
    }
 
    public function addAll($values) {
@@ -19,44 +18,17 @@ class Tree {
    }
 
    public function inorder() {
-      $this->traverseInorder($this->root);
-   }
-
-   private function traverseInorder(Node $node = null) {
-      if ($node == null) {
-         return;
-      }
-      $this->traverseInorder($node->left);
-      echo "$node->value ";
-      $this->traverseInorder($node->right);
+      $this->root->inorder();
    }
 
    public function preorder() {
-      $this->traversePreorder($this->root);
-   }
-
-   private function traversePreorder(Node $node = null) {
-      if ($node == null) {
-         return;
-      }
-
-      echo "$node->value ";
-      $this->traversePreorder($node->left);
-      $this->traversePreorder($node->right);
+      $this->root->preorder();
    }
 
    public function postorder() {
-      $this->traversePostorder($this->root);
-   }
-
-   private function traversePostorder(Node $node = null) {
-      if ($node == null) {
-         return;
-      }
-
-      $this->traversePostorder($node->left);
-      $this->traversePostorder($node->right);
-      echo "$node->value ";
+      $this->root->postorder();
    }
 }
+
+class TreeException extends Exception {}
 ?>
