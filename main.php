@@ -8,7 +8,12 @@
    Postorder: A C E D B H I G F
  * @author Andrew Crites <explosion-pills@aysites.com>
  */
+
+/**
+ * TODO an autoloader might be nice
+ */
 require 'src/Tree.php';
+require 'src/Queue.php';
 require 'src/node/Node.php';
 require 'src/node/Branch.php';
 require 'src/node/Leaf.php';
@@ -19,6 +24,7 @@ $tree = new Tree;
 $tree->addAll($values);
 
 echo <<<TEXT
+Level Order: {$tree->levelorder()}
 Inorder: {$tree->inorder()}
 Preorder: {$tree->preorder()}
 Postorder: {$tree->postorder()}

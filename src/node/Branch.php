@@ -46,5 +46,11 @@ class Branch implements Node {
          . $this->right->postorder()
          . "$this->value ";
    }
+
+   public function queue(Queue $q) {
+      $q->enqueue($this->left);
+      $q->enqueue($this->right);
+      return "$this->value ";
+   }
 }
 ?>
