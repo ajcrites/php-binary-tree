@@ -1,7 +1,6 @@
 <?php
 class Tree {
    private $root;
-   private $counter = 1;
 
    public function __construct() {
       $this->root = new Leaf;
@@ -18,15 +17,15 @@ class Tree {
    }
 
    public function inorder() {
-      $this->root->inorder();
+      return $this->root->inorder();
    }
 
    public function preorder() {
-      $this->root->preorder();
+      return $this->root->preorder();
    }
 
    public function postorder() {
-      $this->root->postorder();
+      return $this->root->postorder();
    }
 }
 

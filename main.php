@@ -18,13 +18,10 @@ $values = array_slice($argv, 1);
 $tree = new Tree;
 $tree->addAll($values);
 
-echo "Inorder: ";
-$tree->inorder();
-echo "\n";
-echo "Preorder: ";
-$tree->preorder();
-echo "\n";
-echo "Postorder: ";
-$tree->postorder();
-echo "\n";
+echo <<<TEXT
+Inorder: {$tree->inorder()}
+Preorder: {$tree->preorder()}
+Postorder: {$tree->postorder()}
+
+TEXT;
 ?>
