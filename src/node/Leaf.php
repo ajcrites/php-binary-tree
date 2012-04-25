@@ -16,5 +16,13 @@ class Leaf implements Node {
    /**#@-*/
 
    public function queue(Queue $q) {}
+
+   public function toArray() {
+      return null;
+   }
+
+   public function height() {
+      return 0;
+   }
 }
 ?>

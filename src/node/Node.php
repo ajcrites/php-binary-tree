@@ -18,5 +18,15 @@ interface Node {
     * Enqueue the left and right nodes, if available, and return the value for level-order
     */
    function queue(Queue $q);
+
+   /**
+    * Convert tree to an array with exposed values/branches
+    */
+   function toArray();
+
+   /**
+    * Calculate tree height by comparing maximum left/right branch length
+    */
+   function height();
 }
 ?>

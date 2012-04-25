@@ -52,5 +52,18 @@ class Branch implements Node {
       $q->enqueue($this->right);
       return "$this->value ";
    }
+
+   public function toArray() {
+      return array('value' => $this->value
+         , 'left' => $this->left->toArray()
+         , 'right' => $this->right->toArray()
+      );
+   }
+
+   public function height() {
+      $lefth = $this->left->height();
+      $righth = $this->right->height();
+      return ($lefth > $righth) ? $lefth + 1 : $righth + 1;
+   }
 }
 ?>

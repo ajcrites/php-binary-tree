@@ -46,6 +46,12 @@ class Tree {
       return $lot;
    }
 
+   public function toArray() {
+      $nodes = $this->root->toArray();
+
+      return array('root' => $nodes, 'height' => $this->root->height());
+   }
+
    public function inorder() {
       return $this->root->inorder();
    }
