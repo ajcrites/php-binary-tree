@@ -1,4 +1,15 @@
 <?php
+/**
+ * The purpose of this file is to provide a wrapper for the Binary Tree Node collection.
+ * This essentially points to the root node and wraps functionality associated with it.
+ * @author Andrew Crites <explosion-pills@aysites.com>
+ * @copyright 2012
+ * @package php-binary-tree
+ */
+
+/**
+ * Tree container class
+ */
 class Tree {
    /**
     * @var Node base node of the tree
@@ -46,12 +57,6 @@ class Tree {
       return $lot;
    }
 
-   public function toArray() {
-      $nodes = $this->root->toArray();
-
-      return array('root' => $nodes, 'height' => $this->root->height());
-   }
-
    public function inorder() {
       return $this->root->inorder();
    }
@@ -64,6 +69,16 @@ class Tree {
       return $this->root->postorder();
    }
    /**#@-*/
+
+   /**
+    * Convert the tree representation to an array with the root node and height as keys
+    * TODO add width as well
+    */
+   public function toArray() {
+      $nodes = $this->root->toArray();
+
+      return array('root' => $nodes, 'height' => $this->root->height());
+   }
 }
 
 /**

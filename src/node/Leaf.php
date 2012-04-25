@@ -2,6 +2,7 @@
 /**
  * Empty Node class.  This could be replaced simply by NULL, but with Leaf, we obviate conditional
  * checks on a null value
+ * @see Node for method detail
  */
 class Leaf implements Node {
    public function insert($value) {

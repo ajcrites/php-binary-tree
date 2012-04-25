@@ -1,9 +1,14 @@
 <?php
 /**
  * The purpose of this file is to define the Branch class, which is a node that has a value
- * @author Andrew Crites <andrew@gleim.com>
+ * @author Andrew Crites <explosion-pills@aysites.com>
  * @copyright 2012
- * @package php-tree
+ * @package php-binary-tree
+ */
+
+/**
+ * Non-null tree node class.  Has a value and left and right children
+ * @see Node for method detail
  */
 class Branch implements Node {
    private $left;
